@@ -1,0 +1,23 @@
+<%= form_with(model: record, local: true) do |form| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "活动类型" %>
+    <%#= form.number_field :course_id, id: :record_course_id %>
+    <%= form.collection_select :course_id, Course.all, :id, :des, include_blank: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "提交"%>
+  </div>
+<% end %>
