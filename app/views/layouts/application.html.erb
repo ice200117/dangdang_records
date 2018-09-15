@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>当当活动记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,11 @@
   </head>
 
   <body>
+
+    <div class="ui two item menu">
+      <a class="active item" href="<%=root_path%>">首页</a>
+      <a class="item" href="<%=courses_path%>">活动管理</a>
+    </div>
     <%= yield %>
   </body>
 </html>
